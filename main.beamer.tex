@@ -1,0 +1,13 @@
+\documentclass[10pt,ignorenonframetext]{beamer}
+\input{header.tex}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{theorems}[ams style] 
+\mode<presentation>{
+\usetheme{Berlin}
+}
+\mode<presentation>{
+\usecolortheme{beaver}
+}
+\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+
+\input{main.tex}
