@@ -12,6 +12,9 @@
 
 
 % \newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+% \newif\ifglaerur
+% \glaerurtrue
+% \glaerurfalse
 
 
 %main.tex
@@ -222,7 +225,11 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{CompassEquivTheorem.png}
+    \ifglaerur
+    \input{GeoGebra/Mohr/Beamer/FaerslaLengdar.beamer.tex}
+    \else
+    \input{GeoGebra/Mohr/FaerslaLengdar.tex}
+    \fi
     \caption{Færsla lengdar.}
     \label{fig:CET}
   \end{figure}
@@ -245,7 +252,11 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{MohrMaschCon1.png}
+    \ifglaerur
+    \input{GeoGebra/Mohr/Beamer/SkpHringsOgLinu.beamer.tex}
+    \else
+    \input{GeoGebra/Mohr/SkpHringsOgLinu.tex}
+    \fi
     \caption{Skurðpunktur línu og hrings (i)}
     \label{fig:mmcon1}
   \end{figure}
@@ -267,7 +278,7 @@ Við byrjum á að sanna (i).
     \(F = \hri{EA}+\hri{AB} \) og
     \(G = \hri{EA}*\hri{AB} \).
     Þá er \(M = \hri{FA}+\hri{GA}\) miðpunktur striksins \(AB\),
-    þar sem \(\Delta FAM\) og \(\Delta EFA\) eru einslægir þríhyrningar með
+    þar sem \(\Delta FAM \sim \Delta EFA\) eru einslaga þríhyrningar með
     hlutföll \(1:2\).
    (sjá mynd \ref{fig:mmcon2}) 
   \end{hfsmid}
@@ -275,7 +286,11 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{MohrMaschCon2.png}
+    \ifglaerur
+    \input{GeoGebra/Mohr/Beamer/Midpstriks.beamer.tex}
+    \else
+    \input{GeoGebra/Mohr/Midpstriks.tex}
+    \fi
     \caption{Miðpunktur striks}
     \label{fig:mmcon2}
   \end{figure}
@@ -300,48 +315,11 @@ Við byrjum á að sanna (i).
    \begin{frame}
      \begin{figure}[H]
        \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.4cm,ystep=0.4cm] (-3.12,-8.46) grid (3.69,0.2);
-    \clip(-3.12,-8.46) rectangle (3.69,0.2);
-    \draw(0,-4) circle (1.6cm);
-    \draw(2,-4) circle (1.6cm);
-    \draw(1,-2.27) circle (1.6cm);
-    \draw(-1,-2.27) circle (1.6cm);
-    \draw(-2,-4) circle (1.6cm);
-    \draw [domain=-3.12:3.69] plot(\x,{(-0.54--1.73*\x)/1});
-    \draw [domain=-3.12:3.69] plot(\x,{(-4.54-0*\x)/2});
-    \draw [domain=-3.12:3.69] plot(\x,{(-0.54-1.73*\x)/1});
-    \draw [domain=-3.12:3.69] plot(\x,{(--7.46-1.73*\x)/-1});
-    \draw [domain=-3.12:3.69] plot(\x,{(--11.46-0*\x)/-2});
-    \draw [domain=-3.12:3.69] plot(\x,{(-7.46-1.73*\x)/1});
-    \draw [line width=2pt] (-2,-4)-- (-1,-5.73);
-    \draw [line width=2pt] (1,-5.73)-- (2,-4);
-    \draw [line width=2pt] (2,-4)-- (1,-2.27);
-    \draw [line width=2pt] (-2,-4)-- (-1,-2.27);
-    \draw [line width=2pt] (-1,-5.73)-- (1,-5.73);
-    \draw [line width=2pt] (-1,-2.27)-- (1,-2.27);
-    \draw(1,-5.73) circle (1.6cm);
-    \draw(-1,-5.73) circle (1.6cm);
-    \begin{scriptsize}
-    \fill [color=qqqqff] (0,-4) circle (1.0pt);
-    \draw[color=qqqqff] (0.07,-3.9) node {$A$};
-    \fill [color=qqqqff] (2,-4) circle (1.0pt);
-    \draw[color=qqqqff] (2.07,-3.9) node {$B$};
-    \fill [color=uququq] (1,-2.27) circle (1.0pt);
-    \draw[color=uququq] (1.08,-2.16) node {$C$};
-    \fill [color=uququq] (-1,-2.27) circle (1.0pt);
-    \draw[color=uququq] (-0.92,-2.16) node {$D$};
-    \fill [color=uququq] (-2,-4) circle (1.0pt);
-    \draw[color=uququq] (-1.92,-3.9) node {$E$};
-    \fill [color=uququq] (-1,-5.73) circle (1.0pt);
-    \draw[color=uququq] (-0.93,-5.63) node {$F$};
-    \fill [color=uququq] (1,-5.73) circle (1.0pt);
-    \draw[color=uququq] (1.08,-5.63) node {$G$};
-    \end{scriptsize}
-    \end{tikzpicture}
+        \ifglaerur
+        \input{GeoGebra/Mohr/Beamer/Sexhyrningur.beamer.tex}
+        \else
+        \input{GeoGebra/Mohr/Sexhyrningur.tex}
+        \fi
        \caption{Jafnarma sexhyrningur}
        \label{fig:jafnarmasexhyrningur}
      \end{figure}
@@ -359,11 +337,11 @@ Við byrjum á að sanna (i).
     teiknað svo hring með miðju í \(A\) og \(B\) og fundið skurðpunkt þeirra.)
     Veljum svo punkt \(C = \hri{BM_1} * \hri{M_1A}\) á hringnum \(\hri{M_1A}\), og
     finnum svo \(D\) sem skurðpunkt hringsins \(\hri{M_1A}\) og hrings með miðju í
-    \(C\) og geisla \(2R\).
+    \(C\) og geisla \(2R\) (sem við getum fundið með tvöföldun lengdar og svo fært í \(C\)).
     \theorembreak
     Finnum nú \(P' = \hri{M_1P}+\lin{C}{D}\) með smíð \ref{hfsmid:skpomidjulinuoghrings}.
     Látum nú \(M_3\) vera miðpunkt striksins \(CD\) sem við finnum með smíð \ref{hfsmid:midplinu}.
-    Látum nú vera punkt á \(E = \hri{M_3C} + \hri{K_5}\) þar sem \(\hri{K_5}\) er hringur
+    Látum nú \(E\) vera punkt á \(K_3\) þ.a.  \(P'E=PB\)  þar sem \(\hri{K_5}\) er hringur
     með miðju í \(P'\) og geisla \(PB\).
     Látum nú \(\hri{K_6}\) vera hring með miðju í \(B\) og geisla \(EC\) og
     \(\hri{K_7}\) vera hring með miðju í \(B\) og geisla \(ED\).
@@ -392,7 +370,11 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{MohrMaschCon3.png}
+    \ifglaerur
+    \input{GeoGebra/Mohr/Beamer/SkpHringsOgMidjuLinu.beamer.tex}
+    \else
+    \input{GeoGebra/Mohr/SkpHringsOgMidjuLinu.tex}
+    \fi
     \caption{Skurðpunktar hrings og línu í gegnum miðju hans}
     \label{fig:mmcon3}
   \end{figure}
@@ -408,7 +390,8 @@ Við byrjum á að sanna (i).
   \begin{hfsmid}[Skurðpunktur línu og þverils hennar gegnum gefinn punkt \cite{Hungerbuhler}] \label{hfsmid:skplinuoghornrettarlinu}
     Látum \(\lin{P_1}{P_2}\) vera línu \(Q\) punkt. Við finnum þá punkt \(Q'\)
     með því að spegla \(Q\) um \(\lin{P_1}{P_2}\) með smíð \ref{hfsmid:speglunumlinu}.
-    Við finnum svo miðpunkt striksins \(\lin{Q}{Q'}\) með smíð \ref{hfsmid:midplinu},
+    \(Q-Q'\) er þá þverill \(P_1-P_2\).
+    Við finnum svo \(L\), miðpunkt striksins \(\lin{Q}{Q'}\) með smíð \ref{hfsmid:midplinu},
     en hann liggur á bæði \(\lin{Q}{Q'}\) og \(\lin{P_1}{P_2}\) og er því skurðpunktur
     þverilsins \(\lin{Q}{Q'}\) og \(\lin{P_1}{P_2}\) (sjá mynd \ref{fig:mmcon4})
   \end{hfsmid}
@@ -418,9 +401,22 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{MohrMaschCon4.png}
-    \caption{Skurðpunktur línu og þverils hennar gegnum gefinn punkt}
+    \ifglaerur
+    \input{GeoGebra/Mohr/Beamer/Thverill.beamer.tex}
+    \else
+    \input{GeoGebra/Mohr/Thverill.tex}
+    \fi
+    \caption{Skurðpunktur línu og þverils hennar gegnum gefinn punkt.}
     \label{fig:mmcon4}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[H]
+    \centering
+    \input{GeoGebra/Mohr/ThverillEfQErALinunni.tex}
+    \caption{Skurðpunktur línu og þverils hennar gegnum gefinn punkt á línunni.}
+    \label{fig:mmcon6}
   \end{figure}
 \end{frame}
 
@@ -447,18 +443,9 @@ Við byrjum á að sanna (i).
 \end{frame}
 
 \begin{frame}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{MohrMaschCon5.png}
-    \caption{Skurðpunktur tveggja lína}
-    \label{fig:mmcon5}
-  \end{figure}
-\end{frame}
-
-\begin{frame}
   Finnum nú lengdina \(\ell\):
   \begin{hfsmid}[Lengd frá punkti á striki til skurðpunkts þess við annað strik \cite{Hungerbuhler}]\label{hfsmid:lengdlinafraskp}
-    Sjá mynd \ref{fig:mmcon6}.
+    Sjá mynd \ref{fig:mmcon5}.
     Við byrjum á að tvöfalda lengdina \(Q_1L\) þ.a. \(Q_1C = 2Q_1L\) með smíð
     \ref{hfsmid:tvofoldunlengdar}. Látum nú \(K\) vera hring sem er nógu stór
     (getum tvöfaldað gefnu lengdina þangað til að það dugir)
@@ -477,11 +464,17 @@ Við byrjum á að sanna (i).
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{MohrMaschCon6.png}
-    \caption{Lengdin L fundin}
-    \label{fig:mmcon6}
+    \ifglaerur
+        \input{GeoGebra/Mohr/Beamer/SkpTveggjaLina.beamer.tex}
+    \else
+        \input{GeoGebra/Mohr/SkpTveggjaLina.tex}
+    \fi
+    \caption{Skurðpunktur tveggja lína}
+    \label{fig:mmcon5}
   \end{figure}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -492,7 +485,6 @@ Við byrjum á að sanna (i).
     \label{fig:eulerschords}
   \end{figure}
 \end{frame}
-
 
 
 
@@ -559,70 +551,17 @@ geisla.
   reglustiku einni saman. Því verðum við annaðhvort að hafa að punktarnir liggi
   ekki allir á sömu línunni, eða að við megum velja okkur punkt af handahófi
   (og þá punkt sem er ekki á línunni á hringnum) á þeim hlutum sem við höfum þegar teiknað.
-  Við reynum í þessari umfjöllun að sýna hvernig finna megi þessa handahófsvöldu
-  punkta hjá Steiner, en það er ekki alltaf hægt. Við sleppum því því í síðari smíðum.
+  Við komum okkur því saman um að það megi.
+  % Við reynum í þessari umfjöllun að sýna hvernig finna megi þessa handahófsvöldu
+  % punkta hjá Steiner, en það er ekki alltaf hægt. Við sleppum því því í síðari smíðum.
 
   \begin{figure}[H]
     \centering
-    \definecolor{xdxdff}{rgb}{0.49,0.49,1}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.2cm,ystep=0.2cm] (3.25,-1.99) grid (4.38,-0.89);
-    \clip(3.25,-1.99) rectangle (4.38,-0.89);
-    \draw [domain=3.25:4.38] plot(\x,{(-1.12-0*\x)/0.8});
-    \draw(3.94,-1.4) circle (0.53cm);
-    \begin{scriptsize}
-    \fill [color=qqqqff] (3.4,-1.4) circle (1.5pt);
-    \draw[color=qqqqff] (3.41,-1.38) node {$A$};
-    \fill [color=qqqqff] (4.2,-1.4) circle (1.5pt);
-    \draw[color=qqqqff] (4.21,-1.38) node {$B$};
-    \fill [color=xdxdff] (3.94,-1.4) circle (1.5pt);
-    \draw[color=xdxdff] (3.95,-1.38) node {$C$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    
+    \input{GeoGebra/Steiner/EkkiAllir.tex}
     \caption{Ekki er hægt að teikna þveril línunnar \(A-B\) gegnum \(A\)}
     \label{fig:ekkiallir}
   \end{figure}
 \end{frame}
-
-% \begin{frame}
-%   \begin{figure}[H]
-%     \centering
-%     \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-%     \definecolor{qqqqff}{rgb}{0,0,1}
-%     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6cm,y=0.6cm]
-%     \clip(-4.06,-1.1) rectangle (6.17,5.83);
-%     \draw [domain=-4.06:6.17] plot(\x,{(-0-0*\x)/4});
-%     \draw(2.84,3.94) circle (0.76cm);
-%     \draw [domain=-4.06:6.17] plot(\x,{(--2.54-0*\x)/0.81});
-%     \draw (3.82,-1.1) -- (3.82,5.83);
-%     \draw (1.86,-1.1) -- (1.86,5.83);
-%     \draw [domain=-4.06:6.17] plot(\x,{(-9.26-0*\x)/-1.96});
-%     \begin{scriptsize}
-%     \fill [color=qqqqff] (-2,0) circle (1.5pt);
-%     \draw[color=qqqqff] (-2.08,-0.28) node {$A$};
-%     \fill [color=qqqqff] (0,0) circle (1.5pt);
-%     \draw[color=qqqqff] (0.03,-0.28) node {$M$};
-%     \fill [color=qqqqff] (2,0) circle (1.5pt);
-%     \draw[color=qqqqff] (2.01,-0.28) node {$B$};
-%     \fill [color=qqqqff] (2.84,3.94) circle (1.5pt);
-%     \draw[color=qqqqff] (3.08,4.17) node {$O$};
-%     \fill [color=uququq] (1.86,3.14) circle (1.5pt);
-%     \draw[color=uququq] (1.45,2.86) node {$C$};
-%     \fill [color=uququq] (3.82,4.74) circle (1.5pt);
-%     \draw[color=uququq] (4.04,5.11) node {$D$};
-%     \fill [color=uququq] (3.82,3.14) circle (1.5pt);
-%     \draw[color=uququq] (4.04,2.94) node {$J$};
-%     \fill [color=uququq] (1.86,4.74) circle (1.5pt);
-%     \draw[color=uququq] (1.16,5.13) node {$K$};
-%     \end{scriptsize}
-%     \end{tikzpicture}
-%     \caption{Smíð \ref{hogrsmid:punktfinnari}, punktfinnari (lokaútgáfa).}
-%     \label{fig:punktfinnariloka}
-%   \end{figure}
-% \end{frame}
 
 
 \begin{frame}[allowframebreaks]
@@ -630,24 +569,18 @@ geisla.
     Tveir punktar \(A \Og B\) og miðpunktur þeirra \(M\) á gefnu línunni sé þekktir.
     Köllum þetta stefnda beina línu.
     Teiknum \(A-P\) og látum \(S\) vera punkt á \(A-P\) hinumegin við \(B-P\).
-    Við getum fundið \(S\) með því að nýta smíð \ref{hogrsmid:punktfinnari}
-    á punkta \(A \Og P\) (eða \(B\) eða \(C\), ef við lendum í vandræðum).
-    Við þurfum ekki að nota smíð \ref{hogrsmid:punktfinnari} ef við fáum
-    \(S\) gefinn.
-    %en ef \(M\) er í miðju gefna hringsins, þá getum við notað \(P\) \(S\)
-    %sem skurðpunkt gefna hringsins við \(P-M\) (þetta er notað í smíð
-    %\ref{hogrsmid:punktfinnari}).
 
-    \theorembreak
-    Teiknum svo \(S-M\) og \(B-S\). Látum \(C = B-P+ S-M\).
+    Teiknum nú \(S-M\) og \(B-S\). Látum \(C = B-P+ S-M\).
     Ef við teiknum svo línu \(A-C\), þá sker hún \(B-S\) í
-    \(D = B-S + A-O\), en þá er línan \(P-D\) samsíða \(A-B\),
-    en skv. setningu Ceva um þríhyrninga gildir \cite{WikiCeva} að þar sem
-    línurnar liggja allar gegnum sameiginlegan punkt C, þá er
+    \(D = B-S + A-O\), en þá er línan \(P-D\) samsíða \(A-B\).
     
+    \theorembreak
+    \(P-D\) og \(A-B\) eru samsíða, þar sem
+    setning Ceva \cite{WikiCeva} um þríhyrninga segir að þar eð
+    hornalínurnar liggja allar gegnum sameiginlegan punkt C, þá er
     \[\f{AM}{MB} \cdot \f{BD}{DS} \cdot \f{SP}{PA} = 1,\]
-    og þar sem \(\f{AM}{BM} = 1\) er þá  \(\f{BD}{DS}= \f{PA}{SP} \)
-    svo \(\f{BS}{DS}=\f{AS}{PS}\). Því eru \(\Delta ABS \equiv \Delta PDS\)
+    og þar sem \(\f{AM}{BM} = 1\), þá  er \(\f{BD}{DS}= \f{PA}{SP} \)
+    svo \(\f{BS}{DS}=\f{AS}{PS}\). Því er \(\Delta ABS \equiv \Delta PDS\)
     og \(P-Q\) því samsíða \(A-B\) (því \(\angle ABS = \angle PDS\)).
   \end{hogrsmid}
 \end{frame}
@@ -655,47 +588,12 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \definecolor{xdxdff}{rgb}{0.49,0.49,1}
-    \definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=3.0cm,y=3.0cm]
-    \clip(-0.22,-0.35) rectangle (2.84,1.65);
-    \draw(2.49,1.11) circle (0.61cm);
-    \draw [domain=-0.22:2.84] plot(\x,{(-0.36-0*\x)/-0.28});
-    \draw [domain=-0.22:2.84] plot(\x,{(-0-1.14*\x)/-0.88});
-    \draw [domain=-0.22:2.84] plot(\x,{(-2.27--1.14*\x)/-1.12});
-    \draw [domain=-0.22:2.84] plot(\x,{(-0-0*\x)/2});
-    \draw [domain=-0.22:2.84] plot(\x,{(--2.56-1.28*\x)/1.01});
-    \draw (1,-0.35) -- (1,1.65);
-    \draw [domain=-0.22:2.84] plot(\x,{(-0--1.02*\x)/0.99});
-    \draw [domain=-0.22:2.84] plot(\x,{(--0.26-0*\x)/0.23});
-    \begin{scriptsize}
-    \fill [color=uuuuuu] (0,0) circle (1.0pt);
-    \draw[color=uuuuuu] (0.02,0.03) node {$A$};
-    \fill [color=xdxdff] (1,0) circle (1.0pt);
-    \draw[color=xdxdff] (1.03,0.03) node {$M$};
-    \fill [color=xdxdff] (2,0) circle (1.0pt);
-    \draw[color=xdxdff] (2.02,0.03) node {$B$};
-    \fill [color=qqqqff] (2.49,1.11) circle (1.0pt);
-    \draw[color=qqqqff] (2.51,1.14) node {$O$};
-    \fill [color=qqqqff] (0.88,1.14) circle (1.0pt);
-    \draw[color=qqqqff] (0.9,1.17) node {$P$};
-    \fill [color=uuuuuu] (2.60,1.29) circle (1.0pt);
-    \draw[color=uuuuuu] (2.61,1.32) node {$Q$};
-    \fill [color=uuuuuu] (2.40,1.29) circle (1.0pt);
-    \draw[color=uuuuuu] (2.39,1.32) node {$N$}
-    ;
-    \fill [color=uququq] (0.99,1.28) circle (1.0pt);
-    \draw[color=uququq] (1.01,1.31) node {$S$};
-    \fill [color=uququq] (0.99,1.02) circle (1.0pt);
-    \draw[color=uququq] (1.01,1.05) node {$C$};
-    \fill [color=uququq] (1.1,1.14) circle (1.0pt);
-    \draw[color=uququq] (1.12,1.17) node {$D$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    
-    \caption{Lína samsíða gefinni línu gegnum gefinn punkt með punktfinnara.}
+    \ifglaerur
+    \input{GeoGebra/Steiner/Beamer/Samsida.tex}
+    \else
+    \input{GeoGebra/Steiner/Samsida.tex}
+    \fi
+    \caption{Lína samsíða gefinni línu með gefnum miðpunkt gegnum gefinn punkt.}
     \label{fig:samsida}
   \end{figure}
 \end{frame}
@@ -723,42 +621,7 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-\definecolor{uququq}{rgb}{0.25,0.25,0.25}
-\definecolor{qqqqff}{rgb}{0,0,1}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
-\clip(-2.15,-4.91) rectangle (6.5,3.06);
-\draw [domain=-2.15:6.5] plot(\x,{(-12.8--0.04*\x)/5});
-\draw(1,1.54) circle (0.72cm);
-\draw [domain=-2.15:6.5] plot(\x,{(-2.56--4.1*\x)/1});
-\draw [domain=-2.15:6.5] plot(\x,{(-10.22--4.06*\x)/-4});
-\draw [domain=-2.15:6.5] plot(\x,{(--0.65--4.1*\x)/1});
-\draw [domain=-2.15:6.5] plot(\x,{(--1.03--0.28*\x)/0.85});
-\draw [domain=-2.15:6.5] plot(\x,{(--1.29-0.91*\x)/-0.22});
-\begin{scriptsize}
-\fill [color=qqqqff] (0,-2.56) circle (1.0pt);
-\draw[color=qqqqff] (0.09,-2.44) node {$M$};
-\fill [color=qqqqff] (5,-2.52) circle (1.0pt);
-\draw[color=qqqqff] (5.1,-2.4) node {$M'$};
-\fill [color=qqqqff] (1.14,-3.7) circle (1.0pt);
-\draw[color=qqqqff] (1.22,-3.59) node {$P$};
-\fill [color=qqqqff] (1,1.54) circle (1.0pt);
-\draw[color=qqqqff] (1.09,1.66) node {$O$};
-\fill [color=uququq] (0.37,2.18) circle (1.0pt);
-\draw[color=uququq] (0.45,2.29) node {$Y$};
-\fill [color=uququq] (0.15,1.26) circle (1.0pt);
-\draw[color=uququq] (0.22,1.38) node {$X$};
-\fill [color=uququq] (1.85,1.82) circle (1.0pt);
-\draw[color=uququq] (1.94,1.93) node {$X'$};
-\fill [color=uququq] (1.63,0.9) circle (1.0pt);
-\draw[color=uququq] (1.72,1.02) node {$Y'$};
-\fill [color=uququq] (-0.78,-2.57) circle (1.0pt);
-\draw[color=uququq] (-0.7,-2.45) node {$A$};
-\fill [color=uququq] (0.78,-2.55) circle (1.0pt);
-\draw[color=uququq] (0.87,-2.44) node {$B$};
-\end{scriptsize}
-\end{tikzpicture}
-
-
+    \incsteiner{SamsidaAlmennt.tex}
     \caption{Lína samsíða gefinni línu gegnum gefinn punkt}
     \label{fig:samsidalinu}
   \end{figure}
@@ -777,114 +640,12 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-\definecolor{qqqqff}{rgb}{0,0,1}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\clip(-1.92,-4.18) rectangle (3.75,1.82);
-\draw [domain=-1.92:3.75] plot(\x,{(--2.45-0*\x)/3.06});
-\draw [domain=-1.92:3.75] plot(\x,{(-2.85-2.96*\x)/0.8});
-\draw [domain=-1.92:3.75] plot(\x,{(-6.61-0*\x)/3.06});
-\draw [domain=-1.92:3.75] plot(\x,{(--6.2-2.96*\x)/0.8});
-\begin{scriptsize}
-\fill [color=qqqqff] (-1.18,0.8) circle (1.0pt);
-\draw[color=qqqqff] (-1.12,0.89) node {$A$};
-\fill [color=qqqqff] (1.88,0.8) circle (1.0pt);
-\draw[color=qqqqff] (1.95,0.89) node {$B$};
-\fill [color=qqqqff] (-0.38,-2.16) circle (1.0pt);
-\draw[color=qqqqff] (-0.31,-2.07) node {$P$};
-\draw[color=black] (-1.84,-2.03) node {$m$};
-\draw[color=black] (1.52,1.75) node {$n$};
-\fill [color=uququq] (2.68,-2.16) circle (1.0pt);
-\draw[color=uququq] (2.74,-2.07) node {$Q$};
-\end{scriptsize}
-\end{tikzpicture}
+    \input{GeoGebra/Steiner/FaerslaLengdar.tex}
     \caption{Færsla lengdar}
     \label{fig:hogrfaerslalengdar}
   \end{figure}
   
 \end{frame}
-
-\begin{frame}
-  \begin{hogrsmid}[Punktfinnari]\label{hogrsmid:punktfinnari}
-    Látum \(O\) vera miðju fasta hringsins \(K\), og punkta \(P \Og A\) vera gefna. þ.a.
-    \(O\) liggi ekki á \(P-A\).
-    Við viljum finna punkt \(X\) þ.a. hann sé hinumegin við \(P-O\) við \(A\)
-    á línunni \(A-P\).
-    Teiknum \(P-O\) og látum \(C \Og D\) vera skurðpunkta \(P-O\) og \(K\).
-    Teiknum svo \(A-D\) og látum \(I\) vera skurðpunkt \(A-D\) og \(K\).
-    Þá getum við notað smíð \ref{hogrsmid:samsida} til
-    að teikna línu samsíða \(P-O\) gegnum \(I\), þar sem að við vitum að
-    punktarnir \(I\) og \(A\) eru báðir á \(A-D\) (teiknum gegnum \(A\)
-    ef \(A\) er inní hringnum og endurskýrum \(A\) sem \(I\).)
-    Köllum skurðpunkt línunnar við hringinn \(K\) \(L\),
-    Teiknum svo línurnar \(I-O\) og köllum hinn skurðpunkt hennar við hringinn
-
-    \(K\) \(Q\) og teiknum svo \(L-O\) og köllum hinn skurðpunkt hennar við
-    hringinn \(N\). Þá er línan \(N-Q\) samsíða \(O-P\), en hinumegin við
-    \(O-P\) við \(A\). Þá er skurðpunktur \(N-Q\) við \(A-P\) hinu megin við
-    \(O-P\) við \(A\).
-  \end{hogrsmid}
-\end{frame}
-
-\begin{frame}
-  \begin{figure}[H]
-    \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \definecolor{xdxdff}{rgb}{0.49,0.49,1}
-    \definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(-0.36,-1.52) rectangle (6.27,6.39);
-    \draw(5.13,1.79) circle (0.83cm);
-    \draw [domain=-0.36:6.27] plot(\x,{(--18.78-3*\x)/1.91});
-    \draw [domain=-0.36:6.27] plot(\x,{(-0--1.79*\x)/5.13});
-    \draw [domain=-0.36:6.27] plot(\x,{(-0-1.09*\x)/-5.57});
-    \draw [domain=-0.36:6.27] plot(\x,{(-0-2.49*\x)/-4.68});
-    \draw [domain=-0.36:6.27] plot(\x,{(--7.82-1.51*\x)/0.3});
-    \draw [domain=-0.36:6.27] plot(\x,{(-4.13--0.6*\x)/-0.74});
-    \draw [domain=-0.36:6.27] plot(\x,{(--6.98-1.25*\x)/0.8});
-    \draw [domain=-0.36:6.27] plot(\x,{(-3.91--0.82*\x)/0.15});
-    \draw [domain=-0.36:6.27] plot(\x,{(--2.49-0.21*\x)/0.8});
-    \draw [domain=-0.36:6.27] plot(\x,{(--7.09-1.02*\x)/0.65});
-    \draw [domain=-0.36:6.27] plot(\x,{(-0-4.78*\x)/-3.21});
-    \draw [domain=-0.36:6.27] plot(\x,{(-0-0*\x)/2});
-    \begin{scriptsize}
-    \fill [color=uuuuuu] (0,0) circle (1.5pt);
-    \draw[color=uuuuuu] (0.07,0.11) node {$A$};
-    \fill [color=xdxdff] (1,0) circle (1.5pt);
-    \draw[color=xdxdff] (1.08,0.11) node {$M$};
-    \fill [color=xdxdff] (2,0) circle (1.5pt);
-    \draw[color=xdxdff] (2.08,0.11) node {$B$};
-    \fill [color=qqqqff] (5.13,1.79) circle (1.5pt);
-    \draw[color=qqqqff] (5.2,1.89) node {$O$};
-    \fill [color=qqqqff] (3.21,4.78) circle (1.5pt);
-    \draw[color=qqqqff] (3.29,4.89) node {$P$};
-    \fill [color=uuuuuu] (4.68,2.49) circle (1.5pt);
-    \draw[color=uuuuuu] (4.76,2.59) node {$C$};
-    \fill [color=uuuuuu] (5.57,1.09) circle (1.5pt);
-    \draw[color=uuuuuu] (5.65,1.19) node {$D$};
-    \fill [color=uuuuuu] (4.98,0.97) circle (1.5pt);
-    \draw[color=uuuuuu] (5.03,1.07) node {$I$};
-    \fill [color=uuuuuu] (4.84,1.69) circle (1.5pt);
-    \draw[color=uuuuuu] (4.88,1.79) node {$J$};
-    \fill [color=uuuuuu] (4.18,2.22) circle (1.5pt);
-    \draw[color=uuuuuu] (4.25,2.32) node {$K$};
-    \fill [color=uuuuuu] (4.32,1.99) circle (1.5pt);
-    \draw[color=uuuuuu] (4.39,2.1) node {$L$};
-    \fill [color=uuuuuu] (5.28,2.6) circle (1.5pt);
-    \draw[color=uuuuuu] (5.35,2.71) node {$Q$};
-    \fill [color=uuuuuu] (5.93,1.58) circle (1.5pt);
-    \draw[color=uuuuuu] (6.01,1.69) node {$N$};
-    \fill [color=uququq] (3.56,5.3) circle (1.5pt);
-    \draw[color=uququq] (3.64,5.4) node {$S$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    \caption{Punktfinnari fyrir smíð \ref{hogrsmid:samsidastefndri}}
-    \label{fig:punktfinnari}
-  \end{figure}
-\end{frame}
-
 
 \begin{frame}
   \begin{hogrsmid}[Þverill línu gegnum gefinn punkt] \label{hogrsmid:thverill}
@@ -904,38 +665,8 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(-1.21,-3.17) rectangle (4.06,2.9);
-    \draw [domain=-1.21:4.06] plot(\x,{(-6-0*\x)/3});
-    \draw(1,0.5) circle (1cm);
-    \draw [domain=-1.21:4.06] plot(\x,{(-3.5--2.5*\x)/-2});
-    \draw [domain=-1.21:4.06] plot(\x,{(-0.83-0*\x)/3});
-    \draw [domain=-1.21:4.06] plot(\x,{(-0.47--0.78*\x)/0.62});
-    \draw (1.62,-3.17) -- (1.62,2.9);
-    \draw (3.68,-3.17) -- (3.68,2.9);
-    \begin{scriptsize}
-    \fill [color=qqqqff] (0,-2) circle (1.5pt);
-    \draw[color=qqqqff] (0.07,-1.92) node {$M$};
-    \fill [color=qqqqff] (3,-2) circle (1.5pt);
-    \draw[color=qqqqff] (3.08,-1.92) node {$M'$};
-    \fill [color=qqqqff] (1,0.5) circle (1.5pt);
-    \draw[color=qqqqff] (1.06,0.58) node {$O$};
-    \fill [color=qqqqff] (0.89,1.49) circle (1.5pt);
-    \draw[color=qqqqff] (0.96,1.58) node {$D$};
-    \fill [color=qqqqff] (3.68,1.39) circle (1.5pt);
-    \draw[color=qqqqff] (3.75,1.47) node {$P$};
-    \fill [color=uququq] (1.62,-0.28) circle (1.5pt);
-    \draw[color=uququq] (1.69,-0.19) node {$V$};
-    \fill [color=uququq] (0.38,-0.28) circle (1.5pt);
-    \draw[color=uququq] (0.44,-0.19) node {$U$};
-    \fill [color=uququq] (1.62,1.28) circle (1.5pt);
-    \draw[color=uququq] (1.7,1.36) node {$U'$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    
-    \caption{Þverill gefinnar línu gegnum gefinn punkt}
+    \incsteiner{Thverill.tex}
+    \caption{Þverill gefinnar línu gegnum gefinn punkt.}
     \label{fig:thverilllinu}
   \end{figure}
 \end{frame}
@@ -958,53 +689,11 @@ geisla.
   \end{hogrsmid}
 \end{frame}
 
+
 \begin{frame}
   \begin{figure}[H]
     \centering
-
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-\definecolor{qqqqff}{rgb}{0,0,1}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
-\clip(-2.69,-5.68) rectangle (9.71,7.41);
-\draw (0,-3)-- (3,-3);
-\draw (-1.46,-0.12)-- (0.88,3.36);
-\draw(6.32,2.38) circle (0.82cm);
-\draw [domain=-2.69:9.71] plot(\x,{(-2.34--3.48*\x)/2.34});
-\draw [domain=-2.69:9.71] plot(\x,{(-1.46-0.88*\x)/1.46});
-\draw [domain=-2.69:9.71] plot(\x,{(--5.68-0.88*\x)/1.46});
-\draw (6.32,2.38)-- (9.32,2.38);
-\draw (0,-1)-- (3,-1);
-\draw [domain=-2.69:9.71] plot(\x,{(-16.42--3.48*\x)/2.34});
-\draw [domain=-2.69:9.71] plot(\x,{(--12.56-1.36*\x)/0.73});
-\draw [domain=-2.69:9.71] plot(\x,{(--3.36-1.36*\x)/0.73});
-\draw [domain=-2.69:9.71] plot(\x,{(--4.8--3.48*\x)/2.34});
-\begin{scriptsize}
-\fill [color=qqqqff] (0,-3) circle (1.5pt);
-\draw[color=qqqqff] (0.14,-2.76) node {$P$};
-\fill [color=qqqqff] (3,-3) circle (1.5pt);
-\draw[color=qqqqff] (3.14,-2.76) node {$Q$};
-\fill [color=qqqqff] (-1.46,-0.12) circle (1.5pt);
-\draw[color=qqqqff] (-1.31,0.12) node {$C$};
-\fill [color=qqqqff] (0.88,3.36) circle (1.5pt);
-\draw[color=qqqqff] (1.03,3.59) node {$D$};
-\fill [color=qqqqff] (6.32,2.38) circle (1.5pt);
-\draw[color=qqqqff] (6.47,2.61) node {$O$};
-\fill [color=qqqqff] (0,-1) circle (1.5pt);
-\draw[color=qqqqff] (0.14,-0.76) node {$A$};
-\fill [color=uququq] (2.34,2.48) circle (1.5pt);
-\draw[color=uququq] (2.49,2.72) node {$H$};
-\fill [color=qqqqff] (9.32,2.38) circle (1.5pt);
-\draw[color=qqqqff] (9.51,2.61) node {$Q'$};
-\fill [color=qqqqff] (3,-1) circle (1.5pt);
-\draw[color=qqqqff] (3.12,-0.76) node {$K$};
-\fill [color=uququq] (7.24,3.74) circle (1.5pt);
-\draw[color=uququq] (7.38,3.97) node {$U$};
-\fill [color=uququq] (7.96,2.38) circle (1.5pt);
-\draw[color=uququq] (8.11,2.61) node {$V$};
-\fill [color=uququq] (1.67,1.49) circle (1.5pt);
-\draw[color=uququq] (1.81,1.72) node {$S$};
-\end{scriptsize}
-\end{tikzpicture}
+    \incsteiner{GefinAtt.tex}
     \caption{Færsla gefinnar lengdar í gefna átt}
     \label{fig:gefinatt}
   \end{figure}
@@ -1025,32 +714,7 @@ geisla.
   \begin{figure}[H]
     \centering
 
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{xdxdff}{rgb}{0.49,0.49,1}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
-    \clip(-1.24,-8.6) rectangle (9.79,3.53);
-    \draw [domain=-1.24:9.79] plot(\x,{(-32.21--0.03*\x)/8.7});
-    \draw [domain=-1.24:9.79] plot(\x,{(-31.44--5.22*\x)/8.3});
-    \draw [domain=-1.24:9.79] plot(\x,{(--3.57-1.7*\x)/0.66});
-    \draw [domain=-1.24:9.79] plot(\x,{(--7.26-1.7*\x)/0.66});
-    \begin{scriptsize}
-    \fill [color=qqqqff] (0.14,-3.7) circle (1.5pt);
-    \draw[color=qqqqff] (0.25,-3.53) node {$A$};
-    \fill [color=qqqqff] (8.84,-3.67) circle (1.5pt);
-    \draw[color=qqqqff] (8.95,-3.5) node {$B$};
-    \fill [color=qqqqff] (8.44,1.52) circle (1.5pt);
-    \draw[color=qqqqff] (8.54,1.69) node {$C$};
-    \fill [color=xdxdff] (2.87,-1.98) circle (1.5pt);
-    \draw[color=xdxdff] (2.99,-1.81) node {$M$};
-    \fill [color=xdxdff] (4.61,-0.89) circle (1.5pt);
-    \draw[color=xdxdff] (4.72,-0.72) node {$N$};
-    \fill [color=xdxdff] (3.53,-3.69) circle (1.5pt);
-    \draw[color=xdxdff] (3.63,-3.52) node {$S$};
-    \fill [color=uququq] (5.69,-3.68) circle (1.5pt);
-    \draw[color=uququq] (5.79,-3.52) node {$X$};
-    \end{scriptsize}
-    \end{tikzpicture}
+    \incsteiner{Hlutfall.tex}
     \caption{Hlutfall milli gefinna lengda}
     \label{fig:hlutfall}
   \end{figure}
@@ -1088,34 +752,8 @@ geisla.
   \begin{figure}[H]
     \centering
 
-    \definecolor{xdxdff}{rgb}{0.49,0.49,1}
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6cm,y=0.6cm]
-    \clip(-2.63,-8.31) rectangle (4.32,2.1);
-    \draw(1,-3) circle (1.8cm);
-    \draw [domain=-2.63:4.32] plot(\x,{(--9-0*\x)/-3});
-    \draw (2,-8.31) -- (2,2.1);
-    \draw (-0.67,-2.35) node[anchor=north west] {h};
-    \draw (2.6,-2.35) node[anchor=north west] {k};
-    \draw (0.5,-1.35) node[anchor=north west] {$ \sqrt{hk} $};
-    \draw (1.87,-2.87)-- (2,-2.87);
-    \draw (1.87,-2.87)-- (1.87,-3);
-    \begin{scriptsize}
-    \fill [color=qqqqff] (1,-3) circle (1.0pt);
-    \draw[color=qqqqff] (1.09,-2.88) node {$O$};
-    \fill [color=qqqqff] (4,-3) circle (1.0pt);
-    \draw[color=qqqqff] (4.07,-2.88) node {$K$};
-    \draw[color=black] (-0.48,-0.59) node {$c$};
-    \fill [color=uququq] (-2,-3) circle (1.0pt);
-    \draw[color=uququq] (-1.92,-2.88) node {$H$};
-    \fill [color=xdxdff] (2,-3) circle (1.0pt);
-    \draw[color=xdxdff] (2.09,-2.88) node {$A$};
-    \fill [color=uququq] (2,-0.17) circle (1.0pt);
-    \draw[color=uququq] (2.09,-0.04) node {$S$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    \caption{Finnum kvaðratrót ab}
+    \incsteiner{Kvadratrot.tex}
+    \caption{Finnum \(\sqrt{hk}\).}
     \label{fig:kvadratrot}
   \end{figure}
 \end{frame}
@@ -1144,35 +782,8 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(0.76,-8) rectangle (4.85,-1.88);
-    \draw(2.7,-4.64) circle (1.48cm);
-    \draw [domain=0.76:4.85] plot(\x,{(-21.63--3.34*\x)/3.56});
-    \draw [domain=0.76:4.85] plot(\x,{(--5.89--3.56*\x)/-3.34});
-    \draw (2.7,-4.64)-- (1.24,-4.91);
-    \begin{scriptsize}
-    \draw (2.03,-4.85) node[anchor=north west] {$r$};
-    \draw (2.37,-4.15) node[anchor=north west] {$t$};
-    \draw (1.54,-4.25) node[anchor=north west] {$s$};
-    \draw (2.30,-3.56) node[anchor=north west] {$s$};
-    \end{scriptsize}
-    \draw (2.21,-4.12)-- (2.15,-4.18);
-    \draw (2.09,-4.11)-- (2.15,-4.18);
-    \begin{scriptsize}
-    \fill [color=qqqqff] (2.7,-4.64) circle (1.0pt);
-    \draw[color=qqqqff] (2.75,-4.56) node {$O$};
-    \draw[color=black] (1.97,-3.46) node {$c$};
-    \draw[color=black] (0.8,-5.19) node {$\ell$};
-    \fill [color=uququq] (1.24,-4.91) circle (1.0pt);
-    \draw[color=uququq] (1.29,-4.83) node {$X$};
-    \fill [color=uququq] (3.06,-3.2) circle (1.0pt);
-    \draw[color=uququq] (3.11,-3.13) node {$Y$};
-    \fill [color=uququq] (2.15,-4.05) circle (1.0pt);
-    \draw[color=uququq] (2.21,-3.98) node {$M$};
-    \end{scriptsize}
-    \end{tikzpicture}
+
+    \incsteiner{SkpHringsOgLinu.tex}
     \caption{Skurðpunktar hrings og línu}
     \label{fig:hogrskphringsoglinu}
   \end{figure}
@@ -1234,36 +845,8 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-    \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-    \definecolor{qqqqff}{rgb}{0,0,1}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.3cm,y=1.3cm]
-    \clip(-0.94,-2.97) rectangle (2.5,2.18);
-    \draw(-0.56,-0.42) circle (2.6cm);
-    \draw(1.91,-0.41) circle (1.3cm);
-    \draw [domain=-0.94:2.5] plot(\x,{(-1.03--0.01*\x)/2.47});
-    \draw (-0.56,-0.42)-- (1.28,0.37);
-    \draw (1.28,0.37)-- (1.91,-0.41);
-    \draw (1.28,0.37)-- (1.28,-1.2);
-    \begin{scriptsize}
-    \draw (0.56,-0.40) node[anchor=north west] {$q$};
-    \draw (1.10,-0.05) node[anchor=north west] {$x$};
-    \fill [color=qqqqff] (-0.56,-0.42) circle (1.0pt);
-    \draw[color=qqqqff] (-0.48,-0.36) node {$O_1$};
-    \draw[color=black] (-1.5,1.21) node {$c_1$};
-    \fill [color=qqqqff] (1.91,-0.41) circle (1.0pt);
-    \draw[color=qqqqff] (1.99,-0.35) node {$O_2$};
-    \draw[color=black] (1.46,0.37) node {$c_2$};
-    \fill [color=uququq] (1.28,0.37) circle (1.0pt);
-    \draw[color=uququq] (1.32,0.43) node {$X$};
-    \fill [color=uququq] (1.28,-1.2) circle (1.0pt);
-    \draw[color=uququq] (1.32,-1.13) node {$Y$};
-    \draw[color=black] (0.44,-0.06) node {$r_1$};
-    \draw[color=black] (1.57,-0.04) node {$r_2$};
-    \fill [color=uququq] (1.28,-0.42) circle (1.0pt);
-    \draw[color=uququq] (1.32,-0.36) node {$A$};
-    \end{scriptsize}
-    \end{tikzpicture}
-    \caption{Skurðpunktar tveggja hringja}
+    \incsteiner{Skp2Hringja.tex}
+    \caption{Skurðpunktar tveggja hringja.}
     \label{fig:hogrskptveggjahringja}
   \end{figure}
 \end{frame}
@@ -1290,14 +873,16 @@ geisla.
 \end{frame}
 
 \section{Þrískipting horns og annað ómögulegt} 
-
 \begin{frame}
   Dæmi eru til um sléttumyndir sem ekki er hægt að mynda með einungis hringfara og reglustiku
 \begin{itemize}
-\item Þrískipting horns. Verkefnið felst í að mynda línur sem skipta gefnu horni í þrjú jafn stór horn. Sannað af Pierre Wantzel árið 1837 (með hjálp Galois fræði).
+\item Þrískipting horns.
+  Verkefnið felst í að mynda línur sem skipta gefnu horni í þrjú jafn stór horn.
+  Sannað að það væri ekki hægt af Pierre Wantzel árið 1837 (með hjálp Galois fræði).
 \item Ferningun hrings. Verkefni felst í að búa til ferning sem hefur sama flatarmál og 
 gefinn hringur. Ekki hægt, þar sem það krefst torræðar tölu (\(\sqrt{\pi}\)). (sjá sönnun hjá Jóni Áskeli síðar í samæfingum.)
-\item Tvöföldun tenings. Verkefnið felst í að búa til hlið fernings sem hefur tvöfalt rúmmál á við gefin tening. Ekki hægt, því ekki er hægt að mynda \(\sqrt{3}{2}\) úr heilutölunum með
+\item Tvöföldun tenings. Verkefnið felst í að búa til hlið fernings sem hefur tvöfalt rúmmál á við gefin tening.
+  En það er ekki hægt, því ekki er hægt að mynda \(\sqrt{3}{2}\) úr heilumtölum með
 samlagningu, frádrætti, margföldun, deilingu og kvaðratrótum.
 \end{itemize}
 \end{frame}

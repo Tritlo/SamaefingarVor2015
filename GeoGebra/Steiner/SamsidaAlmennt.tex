@@ -1,0 +1,35 @@
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.55cm,y=0.55cm]
+\clip(-1.25,-5.89) rectangle (8.38,5.62);
+\draw [domain=-1.25:8.38] plot(\x,{(-12.8--0.04*\x)/5});
+\draw(1,1.54) circle (0.49cm);
+\draw [domain=-1.25:8.38] plot(\x,{(-2.56--4.1*\x)/1});
+\draw [domain=-1.25:8.38] plot(\x,{(-10.22--4.06*\x)/-4});
+\draw [domain=-1.25:8.38] plot(\x,{(--0.65--4.1*\x)/1});
+\draw [domain=-1.25:8.38] plot(\x,{(--1.03--0.28*\x)/0.85});
+\draw [domain=-1.25:8.38] plot(\x,{(--1.29-0.91*\x)/-0.22});
+\draw [domain=-1.25:8.38] plot(\x,{(-18.56--0.04*\x)/5});
+\begin{scriptsize}
+\fill [color=qqqqff] (0,-2.56) circle (1.0pt);
+\draw[color=qqqqff] (0.11,-2.42) node {$M$};
+\fill [color=qqqqff] (5,-2.52) circle (1.0pt);
+\draw[color=qqqqff] (5.12,-2.39) node {$M'$};
+\fill [color=qqqqff] (1.14,-3.7) circle (1.0pt);
+\draw[color=qqqqff] (1.24,-3.57) node {$P$};
+\fill [color=qqqqff] (1,1.54) circle (1.0pt);
+\draw[color=qqqqff] (1.09,1.68) node {$O$};
+\fill [color=uququq] (0.37,2.18) circle (1.0pt);
+\draw[color=uququq] (0.45,2.32) node {$Y$};
+\fill [color=uququq] (0.15,1.26) circle (1.0pt);
+\draw[color=uququq] (0.23,1.4) node {$X$};
+\fill [color=uququq] (1.85,1.82) circle (1.0pt);
+\draw[color=uququq] (1.97,1.95) node {$X'$};
+\fill [color=uququq] (1.63,0.9) circle (1.0pt);
+\draw[color=uququq] (1.73,1.04) node {$Y'$};
+\fill [color=uququq] (-0.78,-2.57) circle (1.0pt);
+\draw[color=uququq] (-0.68,-2.43) node {$A$};
+\fill [color=uququq] (0.78,-2.55) circle (1.0pt);
+\draw[color=uququq] (0.88,-2.42) node {$B$};
+\end{scriptsize}
+\end{tikzpicture}

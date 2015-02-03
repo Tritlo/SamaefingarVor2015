@@ -1,0 +1,21 @@
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-1.92,-4.18) rectangle (3.75,1.82);
+\draw [domain=-1.92:3.75] plot(\x,{(--2.45-0*\x)/3.06});
+\draw [domain=-1.92:3.75] plot(\x,{(-2.85-2.96*\x)/0.8});
+\draw [domain=-1.92:3.75] plot(\x,{(-6.61-0*\x)/3.06});
+\draw [domain=-1.92:3.75] plot(\x,{(--6.2-2.96*\x)/0.8});
+\begin{scriptsize}
+\fill [color=qqqqff] (-1.18,0.8) circle (1.0pt);
+\draw[color=qqqqff] (-1.12,0.89) node {$A$};
+\fill [color=qqqqff] (1.88,0.8) circle (1.0pt);
+\draw[color=qqqqff] (1.95,0.89) node {$B$};
+\fill [color=qqqqff] (-0.38,-2.16) circle (1.0pt);
+\draw[color=qqqqff] (-0.31,-2.07) node {$P$};
+\draw[color=black] (-1.84,-2.03) node {$m$};
+\draw[color=black] (1.52,1.75) node {$n$};
+\fill [color=uququq] (2.68,-2.16) circle (1.0pt);
+\draw[color=uququq] (2.74,-2.07) node {$Q$};
+\end{scriptsize}
+\end{tikzpicture}

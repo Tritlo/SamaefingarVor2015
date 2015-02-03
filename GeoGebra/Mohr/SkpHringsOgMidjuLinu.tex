@@ -1,0 +1,52 @@
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.65cm,y=0.65cm]
+\clip(-2.76,-7.27) rectangle (6.83,2.03);
+\draw(-0.52,-0.78) circle (0.71cm);
+\draw [dash pattern=on 1pt off 1pt on 2pt off 4pt,domain=-2.76:6.83] plot(\x,{(-0.77--1.03*\x)/1.67});
+\draw [dash pattern=on 1pt off 1pt on 2pt off 4pt,domain=-2.76:6.83] plot(\x,{(--0.97-0.97*\x)/-0.58});
+\draw(0.57,-0.73) circle (1.42cm);
+\draw(-0.04,-1.76) circle (1.42cm);
+\draw(2.07,-2.31) circle (1.42cm);
+\draw(-0.04,-1.76) circle (1.42cm);
+\draw(0.53,-3.86) circle (1.42cm);
+\draw [domain=-2.76:6.83] plot(\x,{(-7.86-0.55*\x)/2.11});
+\draw(1.59,-4.14) circle (0.71cm);
+\draw(2.07,-2.31) circle (1.77cm);
+\draw(3.48,-4.64) circle (1.52cm);
+\draw(-0.04,-1.76) circle (0.95cm);
+\draw(-0.04,-1.76) circle (1.05cm);
+\begin{scriptsize}
+\fill [color=qqqqff] (-0.52,-0.78) circle (1.0pt);
+\draw[color=qqqqff] (-0.43,-0.67) node {$M$};
+\fill [color=qqqqff] (0.57,-0.73) circle (1.0pt);
+\draw[color=qqqqff] (0.64,-0.61) node {$A$};
+\draw[color=black] (-0.97,0.02) node {$K_4$};
+\fill [color=qqqqff] (1.15,0.25) circle (1.0pt);
+\draw[color=qqqqff] (1.23,0.36) node {$P$};
+\fill [color=uququq] (-0.04,-1.76) circle (1.0pt);
+\draw[color=uququq] (0.04,-1.65) node {$B$};
+\fill [color=uququq] (2.07,-2.31) circle (1.0pt);
+\draw[color=uququq] (2.23,-2.21) node {$M_1$};
+\draw[color=black] (1.07,-0.58) node {$K_1$};
+\fill [color=uququq] (0.53,-3.86) circle (1.0pt);
+\draw[color=uququq] (0.61,-3.76) node {$C$};
+\fill [color=uququq] (2.64,-4.42) circle (1.0pt);
+\draw[color=uququq] (2.72,-4.3) node {$D$};
+\fill [color=uququq] (1.59,-4.14) circle (1.0pt);
+\draw[color=uququq] (1.75,-4.04) node {$M_3$};
+\draw[color=black] (1.14,-3.34) node {$K_3$};
+\draw[color=black] (0.8,-0.13) node {$K_2$};
+\fill [color=uququq] (3.48,-4.64) circle (1.0pt);
+\draw[color=uququq] (3.58,-4.52) node {$P'$};
+\draw[color=black] (2.75,-2.47) node {$K_5$};
+\fill [color=uququq] (1.76,-3.06) circle (1.0pt);
+\draw[color=uququq] (1.84,-2.95) node {$E$};
+\draw[color=black] (-0.68,-0.64) node {$K_6$};
+\fill [color=uququq] (-1.45,-1.35) circle (1.0pt);
+\draw[color=uququq] (-1.37,-1.24) node {$X$};
+\draw[color=black] (-0.76,-0.52) node {$K_7$};
+\fill [color=uququq] (0.41,-0.21) circle (1.0pt);
+\draw[color=uququq] (0.48,-0.1) node {$Y$};
+\end{scriptsize}
+\end{tikzpicture}

@@ -1,0 +1,58 @@
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.85cm,y=0.85cm]
+\clip(-3.19,-4.19) rectangle (4.53,3.1);
+\onslide<4->{
+  \draw (1.94,-0.8)-- (2.68,0.52);
+}
+\onslide<5->{
+  \draw(-0.54,-0.7) circle (2.11cm);
+}
+\onslide<6->{
+  \draw(1.94,-0.8) circle (2.11cm);
+}
+\onslide<9->{
+  \draw [domain=-3.19:4.53] plot(\x,{(--3.14-4.3*\x)/-0.17});
+}
+\onslide<11->{
+  \draw(-0.54,-0.7) circle (1.29cm);
+}
+\begin{scriptsize}
+\onslide<1->{
+  \fill [color=qqqqff] (-0.54,-0.7) circle (1.0pt);
+}
+\onslide<1->{
+  \draw[color=qqqqff] (-0.48,-0.62) node {$A$};
+}
+\onslide<2->{
+  \fill [color=qqqqff] (1.94,-0.8) circle (1.0pt);
+}
+\onslide<2->{
+  \draw[color=qqqqff] (2,-0.72) node {$B$};
+}
+\onslide<3->{
+  \fill [color=qqqqff] (2.68,0.52) circle (1.0pt);
+}
+\onslide<3->{
+  \draw[color=qqqqff] (2.74,0.61) node {$C$};
+}
+\onslide<7->{
+  \fill [color=uququq] (0.79,1.4) circle (1.0pt);
+}
+\onslide<7->{
+  \draw[color=uququq] (0.85,1.49) node {$D$};
+}
+\onslide<8->{
+  \fill [color=uququq] (0.61,-2.9) circle (1.0pt);
+}
+\onslide<8->{
+  \draw[color=uququq] (0.69,-2.81) node {$D'$};
+}
+\onslide<10->{
+  \fill [color=qqqqff] (-1.17,0.68) circle (1.0pt);
+}
+\onslide<10->{
+  \draw[color=qqqqff] (-1.11,0.76) node {$E$};
+}
+\end{scriptsize}
+\end{tikzpicture}
