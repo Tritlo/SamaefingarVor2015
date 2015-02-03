@@ -713,7 +713,6 @@ geisla.
 \begin{frame}
   \begin{figure}[H]
     \centering
-
     \incsteiner{Hlutfall.tex}
     \caption{Hlutfall milli gefinna lengda}
     \label{fig:hlutfall}
@@ -722,29 +721,27 @@ geisla.
 
 \begin{frame}[allowframebreaks]
   \begin{hogrsmid}[Gefnar lengdir \(a \Og b\), smíða á \(\sqrt{ab}\)]\label{hogrsmid:kvadratrot}
-    Látum \(x = \sqrt{ab}\), \(d\) vera þvermál fasta hringsins \(c\) og \(t = a+b\),
-    en finna má \(t\) með því að beita smíð \ref{hogrsmid:strikiatt}.
-
+    Látum \(x = \sqrt{ab}\), \(d\) vera þvermál fasta hringsins \(c\)
+    og \(t = a+b\).
+    Finna má \(t\) með því að beita smíð \ref{hogrsmid:strikiatt}.
     Látum \(h =\f{d}{t}a, \; k = \f{d}{t}b \; \Og s = \sqrt{hk}\).
-    Þá er \(x = \sqrt{ab} = \sqrt{\f{th}{d} \cdot \f{tk}{d}} = \f{t}{d}s\)
+    Þá er \(x = \sqrt{ab} = \sqrt{\f{th}{d} \cdot \f{tk}{d}} = \f{t}{d}s\).
     Athugum að \(h+k = d\), svo við getum búið til strik af lengd
     \(HA = h\) á miðlínu \(HK\) í hring \(c\), en þá er \(AK = k\).
     Notum smíð \ref{hogrsmid:thverill} til að búatil þverill á \(HK\) í
     gegnum \(A\) og köllum skurðpunkt þverilsins við hringinn \(S\).
-    
     \theorembreak
-    Þá er \(AS = \sqrt{hk}\), þar sem við höfum frá fyrirlestri Benedikts
-    (og Pýþagórasi að)
+    Þá er \(AS = \sqrt{hk}\), en það fæst með reglu
+    Pýþagórasar úr fyrirlestri Benedikts:
     \begin{gather*}
       AS^2 + OA^2 = OS^2\\
       \Leftrightarrow AS^2 + \left(\f{d}{2} - k \right)^2 = \left(\f{d}{2} \right)^2\\
     \Leftrightarrow AS^2 = \left( \f{d}{2} \right)^2 - \left( \f{d}{2} \right)^2 + dk - k^2 \\
-    \Leftrightarrow AS^2 = hk + k^2 - k^2\\
-    \Leftrightarrow AS^2 = hk\\
+    \Leftrightarrow AS^2 = hk + k^2 - k^2 = hk
     \Leftrightarrow AS = \sqrt{hk}
   \end{gather*}
   En þá höfum við fundið lengdirnar \(t, d \Og s\), en þá má beita
-  smíð \ref{hogrsmid:hlutfall} til að finna \(x = \f{t}{d}s\)
+  smíð \ref{hogrsmid:hlutfall} til að finna \(x = \f{t}{d}s\).
   \end{hogrsmid}
 \end{frame}
 
